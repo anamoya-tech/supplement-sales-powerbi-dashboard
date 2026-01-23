@@ -1,56 +1,105 @@
-# Supplement Sales — Power BI Dashboard (Data Quality + Revenue Audit)
+# Supplement Sales — Power BI Dashboard  
+**Revenue Analysis & Data Quality Validation**
 
 ## Overview
-This project builds an executive-ready Power BI dashboard to analyze e-commerce supplement sales performance by **country**, **platform**, and **category**, while also validating **data quality** signals (issues and revenue mismatches).
+This project presents an **executive-ready Power BI dashboard** built on top of a cleaned e-commerce dataset of nutritional supplement sales.
 
-The focus is not only visualization, but **trustworthy reporting**: KPIs are built with DAX measures and designed to be filter-aware.
+The goal is to analyze **commercial performance** (revenue, units, returns, discounts) by **country, platform, and category**, while also validating **data quality signals** to ensure the reliability of the analysis.
 
-## Business Questions
-- How does total revenue evolve over time (monthly)?
-- Do revenue and units move together (volume vs pricing/discount effects)?
-- Which countries and platforms drive revenue?
-- Which categories lead by **units** vs **revenue** (and do they differ)?
-- How do discounts relate to revenue performance?
-- What is the return rate by segment?
-- Are there data quality issues or revenue mismatches impacting results?
+This dashboard is intentionally designed to reflect a **real business reporting scenario**, prioritizing clear KPIs, filter-aware DAX measures, and decision-oriented visuals.
 
-## KPI Header (Current Snapshot)
-- Revenue Total: **$23M**
-- Units Sold: **658K**
-- Return Rate: **1.01%**
-- Avg Discount: **12.4%**
-- Issue Rate: **0.0%**
-- Revenue Mismatch Rate: **0.0%**
+---
 
-> Note: Issue and mismatch rates currently show 0%, which indicates either a clean dataset or non-populated flags. This is explicitly tracked as part of the audit layer.
+## Related Project: Data Cleaning & Quality Audit
+The dataset used in this dashboard was previously assessed, cleaned, and audited in a separate project:
 
-## Data & Model
-- Single fact table (`clean_data`) with cleaned dimensions and metrics:
-  - `date_clean`, `location_clean`, `platform_clean`, `category_clean`
-  - `revenue_clean`, `units_sold_clean`, `units_returned_clean`, `discount_clean`
-  - audit flags: `issue_flag`, `revenue_mismatch_flag`, etc.
-- Time axis standardized with `MonthYear_EN` + `MonthYearSort`.
+🔗 **Data Cleaning & Quality Audit (Google Sheets)**  
+https://github.com/anamoya-tech/supplement-sales-data-quality
 
-## Key DAX Measures
-- Revenue Total
-- Units Sold / Units Returned
-- Return Rate
-- Avg Discount
-- Issue Rate
-- Revenue Mismatch Rate
+That project documents:
+- Data quality checks
+- Cleaning decisions
+- Issue and mismatch flag logic
+- BEFORE vs AFTER validation metrics
 
-## How to Run
-1. Download the `.pbix` file from `/powerbi/`.
-2. Open in **Power BI Desktop**.
-3. If needed, update the data source path to the cleaned dataset.
+This Power BI dashboard builds directly on the **cleaned output** of that pipeline.
 
-## Screenshots
-- KPI header preview: `/assets/kpi_header.png`
-- Full dashboard preview: `/assets/dashboard_preview.png`
+---
+
+## Business Questions Addressed
+- What is the overall revenue and sales volume performance?
+- How do revenue and units behave together (volume vs pricing effects)?
+- What is the average discount level across sales?
+- What is the return rate?
+- Are there any data quality issues or revenue mismatches that could affect trust in the analysis?
+
+---
+
+## KPI Snapshot (Current View)
+The dashboard opens with a KPI header designed for executive consumption:
+
+- **Revenue Total:** $23M  
+- **Units Sold:** 658K  
+- **Return Rate:** 1.01%  
+- **Avg Discount:** 12.4%  
+- **Issue Rate:** 0.0%  
+- **Revenue Mismatch Rate:** 0.0%
+
+> Issue and mismatch rates currently show 0%, indicating either a clean dataset or non-populated flags.  
+> These metrics are intentionally included to make **data reliability explicit**.
+
+---
+
+## Data Model & Design
+- Single cleaned fact table (`clean_data`)
+- Core dimensions:
+  - Date (standardized monthly axis)
+  - Country
+  - Platform / Store
+  - Product category
+- Core metrics:
+  - Revenue
+  - Units sold
+  - Units returned
+  - Discount
+- Audit flags:
+  - Issue flags
+  - Revenue mismatch flags
+
+All KPIs are implemented as **DAX measures**, ensuring correct aggregation and responsiveness to filters.
+
+---
+
+## Tools & Skills Demonstrated
+- Power BI Desktop
+- DAX (measures, ratios, defensive calculations)
+- KPI design and executive reporting
+- Data quality awareness in BI
+- Clean dashboard layout and formatting
+- Business-first analytical thinking
+
+---
+
+## Project Structure
+├─ powerbi/
+│ └─ supplement_sales_dashboard.pbix
+├─ assets/
+│ ├─ kpi_header.png
+│ └─ dashboard_preview.png
+├─ README.md
+
+
+---
 
 ## Next Steps
-- Add monthly trend visuals (Revenue + Units)
-- Country/platform breakdown
-- Category ranking toggle (Units vs Revenue)
-- Discount vs revenue relationship (scatter)
+Planned extensions of the dashboard include:
+- Monthly revenue and units trend analysis
+- Country and platform performance comparison
+- Category ranking (Units vs Revenue)
+- Discount vs revenue relationship analysis
 - Returns analysis by segment
+
+---
+
+## Notes
+This project is part of a broader portfolio focused on **end-to-end data analysis**, from data quality assessment to BI-ready reporting.
