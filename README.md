@@ -113,9 +113,40 @@ Phase 1 focuses on overall performance and trend validation:
 ---
 
 ## Screenshots
-- KPI header: `assets/kpi_header.png`
-- Monthly revenue trend: `assets/revenue_monthly.png`
-- Quarterly revenue vs units: `assets/revenue_vs_units_quarterly.png`
+
+### KPI Overview
+High-level executive KPIs summarizing overall commercial performance and data quality signals.
+
+![KPI Header](assets/kpi_header.png)
+
+---
+
+### Revenue Over Time (Monthly)
+Monthly revenue trend used to identify seasonality, fluctuations, and overall performance evolution.
+
+![Monthly Revenue](assets/revenue_monthly.png)
+
+---
+
+### Revenue vs Units Sold (Monthly)
+Comparison between revenue and units sold at a monthly level to assess whether growth is driven by volume or pricing effects.
+
+![Revenue vs Units Monthly](assets/Revenue_vs_Units_Monthly.png)
+
+---
+
+### Revenue Over Time (Quarterly)
+Quarterly aggregation of revenue to reduce noise and highlight structural trends.
+
+![Quarterly Revenue](assets/Revenue_quarterly.png)
+
+---
+
+### Revenue vs Units Sold (Quarterly)
+Clean quarterly comparison of revenue and units sold, enabling a clearer assessment of volume-driven performance.
+
+![Revenue vs Units Quarterly](assets/Revenue_vs_Units_Quarterly.png)
+
 
 ---
 ## Notes
