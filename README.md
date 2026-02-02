@@ -113,10 +113,9 @@ Phase 1 focuses on overall performance and trend validation:
 ---
 
 ## Screenshots
-- KPI header: `<img width="1116" height="344" alt="image" src="https://github.com/user-attachments/assets/fc0eb5b9-756f-49f5-aa4e-d2a2ec1e72b7" />`
-- Monthly revenue trend: `<img width="1663" height="616" alt="image" src="https://github.com/user-attachments/assets/050ac7c6-51ea-4781-9e0b-25528be25a55" />`
-- Quarterly revenue vs units: `<img width="1657" height="934" alt="image" src="https://github.com/user-attachments/assets/f0df8140-487c-4141-828d-f0e05d1c259c" />`
-
+- KPI header: `assets/kpi_header.png`
+- Monthly revenue trend: `assets/revenue_monthly.png`
+- Quarterly revenue vs units: `assets/revenue_vs_units_quarterly.png`
 
 ---
 ## Notes
