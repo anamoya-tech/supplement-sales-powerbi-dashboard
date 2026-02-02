@@ -82,11 +82,14 @@ All KPIs are implemented as **DAX measures**, ensuring correct aggregation and r
 
 ## Project Structure
 ├─ powerbi/
-│ └─ supplement_sales_dashboard.pbix
+│  └─ supplement_sales_dashboard.pbix
 ├─ assets/
-│ ├─ kpi_header.png
-│ └─ dashboard_preview.png
-├─ README.md
+│  ├─ kpi_header.png
+│  ├─ revenue_monthly.png
+│  ├─ Revenue_vs_Units_Monthly.png
+│  ├─ Revenue_quarterly.png
+│  └─ Revenue_vs_Units_Quarterly.png
+└─ README.md
 
 
 ---
