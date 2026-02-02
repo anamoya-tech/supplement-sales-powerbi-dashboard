@@ -101,5 +101,23 @@ Planned extensions of the dashboard include:
 
 ---
 
+## Phase 1 — Performance (Completed)
+Phase 1 focuses on overall performance and trend validation:
+
+- **Revenue over time (Monthly):** monthly trend view for seasonality and changes.
+- **Revenue vs Units (Monthly):** comparison to assess whether performance is volume-driven or pricing-driven.
+- **Quarterly views:** additional quarterly versions were created to reduce noise and improve readability.
+
+**Key takeaway:** Revenue and Units Sold move consistently over time, suggesting performance is primarily **volume-driven** rather than driven by pricing distortions.
+
+---
+
+## Screenshots
+- KPI header: `<img width="1116" height="344" alt="image" src="https://github.com/user-attachments/assets/fc0eb5b9-756f-49f5-aa4e-d2a2ec1e72b7" />`
+- Monthly revenue trend: `<img width="1663" height="616" alt="image" src="https://github.com/user-attachments/assets/050ac7c6-51ea-4781-9e0b-25528be25a55" />`
+- Quarterly revenue vs units: `<img width="1657" height="934" alt="image" src="https://github.com/user-attachments/assets/f0df8140-487c-4141-828d-f0e05d1c259c" />`
+
+
+---
 ## Notes
 This project is part of a broader portfolio focused on **end-to-end data analysis**, from data quality assessment to BI-ready reporting.
