@@ -150,6 +150,43 @@ Clean quarterly comparison of revenue and units sold, enabling a clearer assessm
 
 ![Revenue vs Units Quarterly](assets/Revenue_vs_Units_Quarterly.png)
 
+## Phase 2 — Country & Platform Analysis (Completed)
+
+Phase 2 focuses on understanding **where revenue is generated** and **which sales channels drive performance within each market**.
+
+---
+
+### Revenue by Country
+A comparison of total revenue by country was created to evaluate **market size differences** and identify **top-performing regions**.
+
+![Revenue by Country](assets/revenue_by_country.png)
+
+**Key insights:**
+- Revenue is relatively well distributed across the main markets.
+- Canada, the UK, and the USA show comparable total revenue levels, with no single country overwhelmingly dominating overall performance.
+- This balanced distribution suggests a **multi-market commercial strategy** rather than dependency on a single geography.
+
+---
+
+### Platform Revenue Mix within Country (%)
+A 100% stacked bar chart was built to analyze **how revenue is split across platforms (Amazon, iHerb, Walmart) within each country**.
+
+This view focuses on **relative contribution**, not absolute size, making platform mix differences immediately visible.
+
+![Platform Revenue Mix by Country](assets/Platform_revenue_by_country(%).png)
+
+**Key insights:**
+- Platform contribution is **fairly balanced** within each country.
+- No platform fully dominates a single market, indicating diversified channel strategies.
+- Minor differences in platform mix across countries suggest **local consumer preferences or channel effectiveness**, rather than structural dependence on one platform.
+
+---
+
+### Business Interpretation
+Phase 2 confirms that:
+- Revenue performance is **geographically diversified**.
+- Platform strategy is **well balanced across markets**, reducing channel concentration risk.
+- The business does not rely on a single country or platform for revenue generation, improving overall resilience.
 
 ---
 ## Notes
