@@ -189,5 +189,40 @@ Phase 2 confirms that:
 - The business does not rely on a single country or platform for revenue generation, improving overall resilience.
 
 ---
+
+## 📊 Phase 3 — Category Performance (Units vs Revenue)
+
+**Objective**  
+Identify top-performing product categories and distinguish between volume-driven and value-driven performance, both globally and by market and sales channel.
+
+**Approach**  
+Two comparable rankings were created in Power BI to analyze category performance:
+- **Top Categories by Units Sold**
+- **Top Categories by Revenue**
+
+Both visuals share the same structure, Top N logic, and interactive filters (Country and Platform), allowing direct comparison between sales volume and revenue contribution.
+
+### 📌 Visuals
+
+- **Global category ranking (Units vs Revenue)**  
+  ![Category Performance — Global](assets/categories.png)
+
+- **UK — iHerb category performance**  
+  ![Category Performance — UK / iHerb](assets/categories_uk_iherb.png)
+
+- **Canada — Walmart category performance**  
+  ![Category Performance — Canada / Walmart](assets/categories_canada_walmart.png)
+
+**Key Insights**
+- **Mineral** leads in units sold, indicating a high-volume, fast-rotating category.
+- **Vitamin** generates the highest revenue despite similar unit volumes, suggesting stronger pricing power or higher unit value.
+- Categories such as **Performance** and **Protein** show balanced behavior, contributing consistently to both volume and revenue.
+- Category rankings vary by **country and platform**, confirming that performance is not fully homogeneous across markets and channels.
+
+**Business Interpretation**  
+The comparison between unit-based and revenue-based rankings highlights clear differences between **volume-driven categories** (high units, lower relative revenue) and **value-driven categories** (lower or similar units, higher revenue).  
+These patterns point to differences in pricing strategy, discount intensity, or product positioning, and motivate deeper analysis in the discounts and revenue impact phase (Phase 4).
+
+---
 ## Notes
 This project is part of a broader portfolio focused on **end-to-end data analysis**, from data quality assessment to BI-ready reporting.
