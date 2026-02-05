@@ -4,65 +4,74 @@
 ## Overview
 This project presents an **executive-ready Power BI dashboard** built on top of a cleaned e-commerce dataset of nutritional supplement sales.
 
-The goal is to analyze **commercial performance** (revenue, units, returns, discounts) by **country, platform, and category**, while also validating **data quality signals** to ensure the reliability of the analysis.
+The objective is twofold:
+1. Analyze **commercial performance** (revenue, units sold, returns, discounts) across countries, platforms, and product categories.
+2. Make **data quality and metric reliability explicit**, ensuring trust in the analysis.
 
-This dashboard is intentionally designed to reflect a **real business reporting scenario**, prioritizing clear KPIs, filter-aware DAX measures, and decision-oriented visuals.
+The dashboard is intentionally designed to reflect a **real business reporting scenario**, prioritizing:
+- clear KPIs,
+- filter-aware DAX measures,
+- and decision-oriented visuals.
 
 ---
 
-## Related Project: Data Cleaning & Quality Audit
+## Related Project — Data Cleaning & Quality Audit
 The dataset used in this dashboard was previously assessed, cleaned, and audited in a separate project:
 
 🔗 **Data Cleaning & Quality Audit (Google Sheets)**  
 https://github.com/anamoya-tech/supplement-sales-data-quality
 
 That project documents:
-- Data quality checks
-- Cleaning decisions
-- Issue and mismatch flag logic
+- Data quality checks (formats, duplicates, consistency)
+- Cleaning decisions and transformation logic
+- Issue and mismatch flag definitions
 - BEFORE vs AFTER validation metrics
 
-This Power BI dashboard builds directly on the **cleaned output** of that pipeline.
+This Power BI dashboard builds directly on the **cleaned and audited output** of that pipeline.
 
 ---
 
 ## Business Questions Addressed
 - What is the overall revenue and sales volume performance?
-- How do revenue and units behave together (volume vs pricing effects)?
+- Are revenue trends driven by **volume or pricing effects**?
 - What is the average discount level across sales?
 - What is the return rate?
-- Are there any data quality issues or revenue mismatches that could affect trust in the analysis?
+- Are there any **data quality or revenue mismatches** that could affect trust in the analysis?
+- Which product categories are **volume-driven vs value-driven**?
 
 ---
 
-## KPI Snapshot (Current View)
+## KPI Snapshot (Executive View)
 The dashboard opens with a KPI header designed for executive consumption:
 
 - **Revenue Total:** $23M  
 - **Units Sold:** 658K  
 - **Return Rate:** 1.01%  
-- **Avg Discount:** 12.4%  
+- **Average Discount:** 12.4%  
 - **Issue Rate:** 0.0%  
 - **Revenue Mismatch Rate:** 0.0%
 
-> Issue and mismatch rates currently show 0%, indicating either a clean dataset or non-populated flags.  
-> These metrics are intentionally included to make **data reliability explicit**.
+Issue and mismatch rates are explicitly shown to make **data reliability transparent**.  
+In this dataset, all quality issues were resolved during the cleaning phase, but these KPIs are included to demonstrate how quality monitoring would surface problems in a real production environment.
+
+### KPI Overview
+![KPI Header](assets/kpi_header.png)
 
 ---
 
 ## Data Model & Design
-- Single cleaned fact table (`clean_data`)
-- Core dimensions:
+- **Single cleaned fact table:** `clean_data`
+- **Core dimensions:**
   - Date (standardized monthly axis)
-  - Country
-  - Platform / Store
-  - Product category
-- Core metrics:
+  - Country (`location_clean`)
+  - Platform / Store (`platform_clean`)
+  - Product Category (`category_clean`)
+- **Core metrics:**
   - Revenue
-  - Units sold
-  - Units returned
+  - Units Sold
+  - Units Returned
   - Discount
-- Audit flags:
+- **Audit indicators:**
   - Issue flags
   - Revenue mismatch flags
 
@@ -73,136 +82,70 @@ All KPIs are implemented as **DAX measures**, ensuring correct aggregation and r
 ## Tools & Skills Demonstrated
 - Power BI Desktop
 - DAX (measures, ratios, defensive calculations)
-- KPI design and executive reporting
+- KPI design for executive reporting
 - Data quality awareness in BI
 - Clean dashboard layout and formatting
-- Business-first analytical thinking
+- End-to-end analytical thinking (audit → reporting)
 
 ---
 
-## Project Structure
-├─ powerbi/
-│  └─ supplement_sales_dashboard.pbix
-├─ assets/
-│  ├─ kpi_header.png
-│  ├─ revenue_monthly.png
-│  ├─ Revenue_vs_Units_Monthly.png
-│  ├─ Revenue_quarterly.png
-│  └─ Revenue_vs_Units_Quarterly.png
-└─ README.md
+## Phase 1 — Performance Overview
 
+**Goal**  
+Validate overall commercial performance and identify high-level trends.
 
----
+### Visuals
 
-## Next Steps
-Planned extensions of the dashboard include:
-- Monthly revenue and units trend analysis
-- Country and platform performance comparison
-- Category ranking (Units vs Revenue)
-- Discount vs revenue relationship analysis
-- Returns analysis by segment
+- **Revenue Over Time (Monthly)**  
+  ![Monthly Revenue](assets/revenue_monthly.png)
 
----
+- **Revenue vs Units Sold (Monthly)**  
+  ![Revenue vs Units Monthly](assets/Revenue_vs_Units_Monthly.png)
 
-## Phase 1 — Performance (Completed)
-Phase 1 focuses on overall performance and trend validation:
+- **Revenue Over Time (Quarterly)**  
+  ![Quarterly Revenue](assets/Revenue_quarterly.png)
 
-- **Revenue over time (Monthly):** monthly trend view for seasonality and changes.
-- **Revenue vs Units (Monthly):** comparison to assess whether performance is volume-driven or pricing-driven.
-- **Quarterly views:** additional quarterly versions were created to reduce noise and improve readability.
+- **Revenue vs Units Sold (Quarterly)**  
+  ![Revenue vs Units Quarterly](assets/Revenue_vs_Units_Quarterly.png)
 
-**Key takeaway:** Revenue and Units Sold move consistently over time, suggesting performance is primarily **volume-driven** rather than driven by pricing distortions.
+**Key Takeaway**  
+Revenue and units sold move consistently over time, indicating that performance is primarily **volume-driven**, rather than driven by pricing distortions.
 
 ---
 
-## Screenshots
+## Phase 2 — Country & Platform Analysis
 
-### KPI Overview
-High-level executive KPIs summarizing overall commercial performance and data quality signals.
+**Goal**  
+Understand where revenue is generated and how sales channels contribute within each market.
 
-![KPI Header](assets/kpi_header.png)
+### Visuals
 
----
+- **Revenue by Country**  
+  ![Revenue by Country](assets/revenue_by_country.png)
 
-### Revenue Over Time (Monthly)
-Monthly revenue trend used to identify seasonality, fluctuations, and overall performance evolution.
+- **Platform Revenue Mix by Country (%)**  
+  ![Platform Mix by Country](assets/Platform_revenue_by_country(%).png)
 
-![Monthly Revenue](assets/revenue_monthly.png)
-
----
-
-### Revenue vs Units Sold (Monthly)
-Comparison between revenue and units sold at a monthly level to assess whether growth is driven by volume or pricing effects.
-
-![Revenue vs Units Monthly](assets/Revenue_vs_Units_Monthly.png)
+**Key Insights**
+- Revenue is relatively well distributed across Canada, the UK, and the USA.
+- No single country overwhelmingly dominates performance.
+- Platform contribution is balanced within each market, reducing channel concentration risk.
 
 ---
 
-### Revenue Over Time (Quarterly)
-Quarterly aggregation of revenue to reduce noise and highlight structural trends.
-
-![Quarterly Revenue](assets/Revenue_quarterly.png)
-
----
-
-### Revenue vs Units Sold (Quarterly)
-Clean quarterly comparison of revenue and units sold, enabling a clearer assessment of volume-driven performance.
-
-![Revenue vs Units Quarterly](assets/Revenue_vs_Units_Quarterly.png)
-
-## Phase 2 — Country & Platform Analysis (Completed)
-
-Phase 2 focuses on understanding **where revenue is generated** and **which sales channels drive performance within each market**.
-
----
-
-### Revenue by Country
-A comparison of total revenue by country was created to evaluate **market size differences** and identify **top-performing regions**.
-
-![Revenue by Country](assets/revenue_by_country.png)
-
-**Key insights:**
-- Revenue is relatively well distributed across the main markets.
-- Canada, the UK, and the USA show comparable total revenue levels, with no single country overwhelmingly dominating overall performance.
-- This balanced distribution suggests a **multi-market commercial strategy** rather than dependency on a single geography.
-
----
-
-### Platform Revenue Mix within Country (%)
-A 100% stacked bar chart was built to analyze **how revenue is split across platforms (Amazon, iHerb, Walmart) within each country**.
-
-This view focuses on **relative contribution**, not absolute size, making platform mix differences immediately visible.
-
-![Platform Revenue Mix by Country](assets/Platform_revenue_by_country(%).png)
-
-**Key insights:**
-- Platform contribution is **fairly balanced** within each country.
-- No platform fully dominates a single market, indicating diversified channel strategies.
-- Minor differences in platform mix across countries suggest **local consumer preferences or channel effectiveness**, rather than structural dependence on one platform.
-
----
-
-### Business Interpretation
-Phase 2 confirms that:
-- Revenue performance is **geographically diversified**.
-- Platform strategy is **well balanced across markets**, reducing channel concentration risk.
-- The business does not rely on a single country or platform for revenue generation, improving overall resilience.
-
----
-
-## 📊 Phase 3 — Category Performance (Units vs Revenue)
+## Phase 3 — Category Performance (Units vs Revenue)
 
 **Objective**  
-Identify top-performing product categories and distinguish between volume-driven and value-driven performance, both globally and by market and sales channel.
+Identify top-performing product categories and distinguish between **volume-driven** and **value-driven** performance, both globally and by market and sales channel.
 
 **Approach**  
-Two comparable rankings were created in Power BI to analyze category performance:
+Two comparable rankings were created in Power BI:
 - **Top Categories by Units Sold**
 - **Top Categories by Revenue**
 
 Both visuals share the same structure, Top N logic, and interactive filters (Country and Platform), allowing direct comparison between sales volume and revenue contribution.
 
-### 📌 Visuals
+### Visuals
 
 - **Global category ranking (Units vs Revenue)**  
   ![Category Performance — Global](assets/categories.png)
@@ -221,8 +164,19 @@ Both visuals share the same structure, Top N logic, and interactive filters (Cou
 
 **Business Interpretation**  
 The comparison between unit-based and revenue-based rankings highlights clear differences between **volume-driven categories** (high units, lower relative revenue) and **value-driven categories** (lower or similar units, higher revenue).  
-These patterns point to differences in pricing strategy, discount intensity, or product positioning, and motivate deeper analysis in the discounts and revenue impact phase (Phase 4).
+These patterns point to differences in pricing strategy, discount intensity, or product positioning, and motivate deeper analysis in the next phase.
 
 ---
+
+## Next Steps — Planned Extensions
+Future phases of the dashboard will explore:
+- Discount vs revenue relationship (pricing effectiveness)
+- Identification of segments where discounts increase revenue
+- Return rate analysis by country, platform, and category
+- Revenue impact of returns
+- Extended data quality monitoring visuals
+
+---
+
 ## Notes
-This project is part of a broader portfolio focused on **end-to-end data analysis**, from data quality assessment to BI-ready reporting.
+This project is part of a broader portfolio focused on **end-to-end data analysis**, from data quality assessment and validation to BI-ready reporting and executive storytelling.
